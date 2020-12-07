@@ -1,0 +1,14 @@
+---
+applications:
+- name: asrTomcatEjemploCloudantTranslator
+  random-route: false
+  path: target/asrTomcatEjemploCloudantTranslator.war
+  memory: 640M
+  instances: 1
+  host: asrTomcatEjemploCloudantTranslatorMarina
+  domain: eu-gb.mybluemix.net
+  buildpack: liberty-for-java_v3_50-20201019-1521
+  services:
+  - asrDCBCloudantNoSQL
+  - asrTranslator
+  - Visual Recognition ASR
