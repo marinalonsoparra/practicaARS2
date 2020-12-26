@@ -7,7 +7,8 @@ applications:
   instances: 1
   host: asrTomcatEjemploCloudantTranslatorMarina
   domain: eu-gb.mybluemix.net
-  buildpack: liberty-for-java_v3_50-20201019-1521
+  #buildpack: liberty-for-java_v3_50-20201019-1521
+  buildpack: java_buildpack
   services:
   - asrDCBCloudantNoSQL
   - asrTranslator
