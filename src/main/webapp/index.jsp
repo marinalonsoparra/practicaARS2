@@ -12,17 +12,35 @@
 <hr />
 
 <ul>
-<li><a href="listar">Listar</a></li>
-<li><a href="insertar?palabra=hola">Insertar</a></li>
+<li><a href="listar">Acceder a la base de datos</a></li>
+
+<li>
+			
+			 <form action="insertar" method="post" >
+		
+		  		<p>Insertar una palabra nueva en la base de datos<input type="text" name="palabra">
+				<input type="submit" value="Insertar"></p>
+		
+			</form>
+</li>
+
 <li>
 			
 			 <form action="detectarImagen" method="post" >
 		
-		  		<p>URL de tu imágen<input type="text" name="url">
+		  		<p>URL de tu imagen<input type="text" name="url">
 				<input type="submit" value="detectarImagen"></p>
 		
 			</form>
-		</li>
+</li>
+
+<li>Crear audio:
+<form action="hablar" method="post">
+	<input type="text" name="palabra_audio">
+	<button type="submit">Reproducir en inglés</button>
+</form>
+</li>
+
 </ul>
 </body>
 </html>

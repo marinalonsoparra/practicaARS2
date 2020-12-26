@@ -103,6 +103,30 @@
  	 <artifactId>ibm-watson</artifactId>
   	 <version>8.6.3</version>
 	</dependency>
+	
+	<dependency>
+	<groupId>org.scalameta</groupId>
+	<artifactId>io_sjs0.6_2.11</artifactId>
+	<version>4.1.1</version>
+	</dependency>
+	
+	<dependency>
+  		<groupId>com.ibm.watson</groupId>
+  		<artifactId>speech-to-text</artifactId>
+ 		<version>8.6.3</version>
+	</dependency>
+	
+	<dependency>
+  		<groupId>com.ibm.watson</groupId>
+  		<artifactId>text-to-speech</artifactId>
+  		<version>8.6.3</version>
+	</dependency>
+
+
+
+	
+	
+	
 
 	
   </dependencies>

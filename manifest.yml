@@ -12,3 +12,5 @@ applications:
   - asrDCBCloudantNoSQL
   - asrTranslator
   - Visual Recognition ASR
+  - Speech to Text-asr
+  - Text to Speech-asr
