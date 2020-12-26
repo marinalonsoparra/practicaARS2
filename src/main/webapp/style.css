@@ -1,1 +1,26 @@
 @charset "UTF-8";
+
+h1{
+
+  
+  font-size: 300%;
+  color: white;
+  text-align:center;
+  
+  margin:0,1%;
+  
+}
+
+* {
+background-color: rgb(174, 214, 241);
+  margin:1%;
+  
+  font-family: Verdana;
+}
+
+#autoras
+{
+	background-color: rgb(234, 236, 238);
+	text-align:center;
+	margin:0.001%;
+}

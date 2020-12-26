@@ -15,7 +15,8 @@ public class Traductor
 	public static String translate(String palabra, String sourceModel, String destModel, boolean conversational)
 	{
 		String model;
-		if(sourceModel.equals("en") || sourceModel.equals("es") || destModel.equals("en") || destModel.equals("es"))
+		if(sourceModel.equals("en") || sourceModel.equals("es") || sourceModel.equals("fr") || 
+				sourceModel.equals("de") || destModel.equals("en") || destModel.equals("fr") || destModel.equals("de") || destModel.equals("es"))
 		{
 			model=sourceModel+"-"+destModel;
 			if(conversational) 
@@ -36,7 +37,10 @@ public class Traductor
 		
 		TranslationResult translationResult = languageTranslator.translate(translateOptions).execute().getResult();
 
-		System.out.println(translationResult);		
+		System.out.println(translationResult);	
+		System.out.println(sourceModel);	
+		System.out.println(destModel);	
+		
 		
 		String traduccionJSON = translationResult.toString();
 		JsonObject rootObj = JsonParser.parseString(traduccionJSON).getAsJsonObject();

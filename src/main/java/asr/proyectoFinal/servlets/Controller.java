@@ -39,6 +39,10 @@ public class Controller extends HttpServlet {
 		CloudantPalabraStore store = new CloudantPalabraStore();
 		
 		System.out.println(request.getServletPath());
+		
+		String idioma_original; 
+		String idioma_final; 
+		
 		switch(request.getServletPath())
 		{
 			case "/listar":
@@ -46,12 +50,14 @@ public class Controller extends HttpServlet {
 					  out.println("No hay DB");
 				else
 					out.println("Palabras en la BD Cloudant:<br />" + store.getAll());
-					
+
 				break;
 				
 			case "/insertar":
 				Palabra palabra = new Palabra();
 				String parametro = request.getParameter("palabra");
+				
+				
 
 				if(parametro==null)
 				{
@@ -65,17 +71,37 @@ public class Controller extends HttpServlet {
 					}
 					else
 					{
-						parametro = Traductor.translate(parametro, "es", "en", false);
+						idioma_original = Controller.setLanguage(request.getParameter("idioma_entrada"));
+						idioma_final = Controller.setLanguage(request.getParameter("idioma_salida"));
+						
+
+						if (!idioma_original.equals("en"))
+							parametro = Traductor.translate(parametro, idioma_original, "en", false);
+						
+						if (!idioma_final.equals("en"))
+							parametro = Traductor.translate(parametro, "en", idioma_final, false);
+						
 						palabra.setName(parametro);
 						store.persist(palabra);
-					    out.println(String.format("Almacenada la palabra: %s", palabra.getName()));			    	  
+					    out.println(String.format("Almacenada la palabra: %s", palabra.getName()));
+					    
 					}
 				}
 				break;
 				
 			case "/hablar":
 				String palabra_es = request.getParameter("palabra_audio");
-				String audio = Traductor.translate(palabra_es, "es", "en", false);
+
+				idioma_original = Controller.setLanguage(request.getParameter("idioma_entrada"));
+				idioma_final = Controller.setLanguage(request.getParameter("idioma_salida"));
+				
+				
+				String audio = palabra_es;
+				
+				if (!idioma_original.equals("en"))
+					audio=Traductor.translate(palabra_es,idioma_original, "en", false);
+				
+				//audio = Traductor.translate(audio,"en", idioma_final, false);
 				String transcripcion ="";
 				TextToSpeechService.createSpeech(audio);
 				 try {	
@@ -97,6 +123,10 @@ public class Controller extends HttpServlet {
 				Palabra palabraImagen = new Palabra();
 				String parametroUrl = request.getParameter("url");
 				
+
+				idioma_original = Controller.setLanguage(request.getParameter("idioma_entrada"));
+				idioma_final = Controller.setLanguage(request.getParameter("idioma_salida"));
+				
 				if(parametroUrl==null)
 				{
 					out.println("usage: /detectarImagen?url=url de la imagen a detectar");
@@ -105,6 +135,9 @@ public class Controller extends HttpServlet {
 				{	
 					
 					String image_to_text=ReconocimientoImagenes.reconoceImagen(parametroUrl);
+					
+					if (!idioma_final.equals("en"))
+						image_to_text=Traductor.translate(image_to_text,"en", idioma_final, false);
 						
 					out.println(String.format("La imagen es %s", image_to_text));			    	  
 					    
@@ -120,6 +153,15 @@ public class Controller extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
+	}
+	
+	protected static String setLanguage(String input)
+	{
+		if (input.contains("Esp")){ return "es";}
+		else if (input.contains("Ing")) {return "en";}
+		else if (input.contains("Fra")) {return "fr";}
+		else if (input.contains("Alem")) {return "de";}
+		else return "es";
 	}
 
 }
