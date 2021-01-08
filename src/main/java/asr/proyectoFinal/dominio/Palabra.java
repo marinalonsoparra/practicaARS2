@@ -23,9 +23,11 @@ public class Palabra {
 	private String _id;
 	private String _rev;
 	private String name = null;
+	private String language = null;
 
 	public Palabra() {
 		this.name = "";
+		this.language = "";
 	}
 
 	/**
@@ -73,6 +75,25 @@ public class Palabra {
 	 */
 	public String getName() {
 		return name;
+	}
+
+	/**
+	 * Sets the name
+	 * 
+	 * @param name
+	 *            The visitorName to set.
+	 */
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+	
+	/**
+	 * Gets the visitorName of the document.
+	 * 
+	 * @return The name of the document.
+	 */
+	public String getLanguage() {
+		return language;
 	}
 
 	/**

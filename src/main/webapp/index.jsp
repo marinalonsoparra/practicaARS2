@@ -11,7 +11,7 @@
 <h1>Aprende Idiomas con Cloud!</h1>
 <hr />
 
-<p id="autoras">Practica Final: Andrea Fariña, Marina Alonso y Carmen Ollero</p>
+<p id="autoras">Práctica Final: Andrea Fariña, Marina Alonso y Carmen Ollero</p>
 
 <hr />
 
@@ -54,7 +54,26 @@
 <h2>2. Elige la acción </h2>
 
 <ul>
-<li><a href="listar">Acceder a la base de datos</a></li>
+
+<li>
+ <p>Acceder a la base de datos de las palabras en 
+	<select name="idioma">
+				
+				
+				<option>Español</option>
+				
+				<option>Inglés</option>
+				
+				<option>Francés</option>
+				
+				<option>Alemán</option>
+				
+				<option>Todas</option>
+				
+				
+	</select>
+	<input type="submit" formaction="listar" value="Listar"></p>
+</li>
 
 <li>
 			

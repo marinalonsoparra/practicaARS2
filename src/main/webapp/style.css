@@ -3,7 +3,7 @@
 h1{
 
   
-  font-size: 300%;
+  font-size: 400%;
   color: white;
   text-align:center;
   
@@ -22,5 +22,10 @@ background-color: rgb(174, 214, 241);
 {
 	background-color: rgb(234, 236, 238);
 	text-align:center;
-	margin:0.001%;
+	margin:0.1%;
+}
+
+select, input, button
+{
+	background-color: white;
 }

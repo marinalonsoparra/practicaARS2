@@ -10,6 +10,7 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.nio.Buffer;
 import java.nio.file.Files;
+import java.util.Collection;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -46,10 +47,29 @@ public class Controller extends HttpServlet {
 		switch(request.getServletPath())
 		{
 			case "/listar":
+				
+				String idioma = request.getParameter("idioma");
+			
+				
 				if(store.getDB() == null)
 					  out.println("No hay DB");
 				else
-					out.println("Palabras en la BD Cloudant:<br />" + store.getAll());
+				{
+					Collection<Palabra> palabras = store.getAll();
+					
+					if (idioma.equals("Todas"))
+						out.println("Palabras en la BD Cloudant:<br />" + store.getAll());
+					
+					else
+					{
+						out.println("Palabras en la BD Cloudant en "+idioma+":<br />");
+						
+						for (Palabra p: palabras)
+							if (p.getLanguage().equals(setLanguage (idioma)))
+								out.println(p);
+						
+					}
+				}
 
 				break;
 				
@@ -82,6 +102,7 @@ public class Controller extends HttpServlet {
 							parametro = Traductor.translate(parametro, "en", idioma_final, false);
 						
 						palabra.setName(parametro);
+						palabra.setLanguage(idioma_final);
 						store.persist(palabra);
 					    out.println(String.format("Almacenada la palabra: %s", palabra.getName()));
 					    
