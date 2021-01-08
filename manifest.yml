@@ -5,13 +5,13 @@ applications:
   path: target/asrTomcatEjemploCloudantTranslator.war
   memory: 640M
   instances: 1
-  host: asrTomcatEjemploCloudantTranslatorMarina
+  host: asrTomcatEjemploCloudantTranslatorMarinaAndreaCarmen
   domain: eu-gb.mybluemix.net
   #buildpack: liberty-for-java_v3_50-20201019-1521
   buildpack: java_buildpack
   services:
   - asrDCBCloudantNoSQL
   - asrTranslator
-  - Visual Recognition ASR
-  - Speech to Text-asr
-  - Text to Speech-asr
+  - VisualRecognitionASR
+  - Speech2Text-asr
+  - Text2Speech-asr
