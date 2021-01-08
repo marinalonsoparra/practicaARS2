@@ -21,9 +21,9 @@ public class TextToSpeechService {
 
 	public static void createSpeech(String audio)
 	{
-		IamAuthenticator authenticator = new IamAuthenticator("YaScbFdz080km3LRROZDU2UtGhcjOeWQf7-EzRcS9qaX");
+		IamAuthenticator authenticator = new IamAuthenticator("TtnpREKNd4ynq43CMcbA453kt1p8l_QmNquc3cRB0qOz");
 		TextToSpeech textToSpeech = new TextToSpeech(authenticator);
-		textToSpeech.setServiceUrl("https://api.eu-gb.text-to-speech.watson.cloud.ibm.com/instances/cc77f463-e282-4078-bc68-6f3acf74ff78");
+		textToSpeech.setServiceUrl("https://api.eu-gb.text-to-speech.watson.cloud.ibm.com/instances/e07e5b0e-5fa4-4800-a3bb-91f4465a94d8");
 	
 		try {
 		  SynthesizeOptions synthesizeOptions =

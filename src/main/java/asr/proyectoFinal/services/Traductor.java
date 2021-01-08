@@ -25,10 +25,10 @@ public class Traductor
 		else
 			model="en-es";
 
-		Authenticator authenticator = new IamAuthenticator("1FE5-hQIc25tkFT_TbPsxJsQserpy6yFFYobbnsrOzjd");
+		Authenticator authenticator = new IamAuthenticator("V9ndKkP5eKsprwofGovbgcrwdchoMYQhc6-tYKETtx1w");
 		LanguageTranslator languageTranslator = new LanguageTranslator("2020-11-15",authenticator);
 
-		languageTranslator.setServiceUrl("https://api.eu-gb.language-translator.watson.cloud.ibm.com/instances/7b06525e-3edd-430c-8386-aa382dde53e1");
+		languageTranslator.setServiceUrl("https://api.eu-gb.language-translator.watson.cloud.ibm.com/instances/2d73bd7c-9846-4023-bd69-c5dde31f7c0b");
 		
 		TranslateOptions translateOptions = new TranslateOptions.Builder()
 		  .addText(palabra)

@@ -24,12 +24,12 @@ public class ReconocimientoImagenes {
 	
 	public static String reconoceImagen (String miUrl) 
 	{
-		IamAuthenticator authenticator = new IamAuthenticator("8EPNc3w9Lv6hFbyB55UvzpATFk9pD9-qG8k0xURee7Pc");
+		IamAuthenticator authenticator = new IamAuthenticator("y_8ZCDYW1YIBHlPrNVS3Q8p0xhO0J5Fha0CY1daK8J3L");
 		
 	
 		VisualRecognition visualRecognition = new VisualRecognition("2018-03-19", authenticator);
 	
-		visualRecognition.setServiceUrl("https://api.us-south.visual-recognition.watson.cloud.ibm.com/instances/d24b74eb-d8f0-4dd1-94f5-9e02374864c2");
+		visualRecognition.setServiceUrl("https://api.us-south.visual-recognition.watson.cloud.ibm.com/instances/d0fb5270-a1bd-4fdb-8cd4-434eb718017d");
 	
 		ClassifyOptions classifyOptions = new ClassifyOptions.Builder()
 		        .url(miUrl)

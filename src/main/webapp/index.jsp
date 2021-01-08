@@ -60,7 +60,7 @@
 			
 	
 		
-		 <p>Insertar una palabra nueva en la base de datos<input type="text" name="palabra">
+		 <p>Traducir e insertar una palabra nueva en la base de datos<input type="text" name="palabra">
 		<input type="submit" value="Insertar"></p>
 		
 			

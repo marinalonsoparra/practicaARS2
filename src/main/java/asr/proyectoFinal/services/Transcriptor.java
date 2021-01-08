@@ -23,10 +23,10 @@ public class Transcriptor{
 	public static String transcribe(String audio) throws Exception
 	{
 		
-		Authenticator authenticator = new IamAuthenticator("qjnNOJCauIJ0UzzndNbSxVpX6Nsg4q2-5gZ_EQOBYfZL");
+		Authenticator authenticator = new IamAuthenticator("rX3FNZehCrIJ6Sbyzny--UWGD-OrqhQF1qZHhV6DrwHy");
 		SpeechToText service = new SpeechToText(authenticator);
 		
-		service.setServiceUrl("https://api.eu-gb.speech-to-text.watson.cloud.ibm.com/instances/5f911be5-4485-47fd-916a-6a18cad3095c");
+		service.setServiceUrl("https://api.eu-gb.speech-to-text.watson.cloud.ibm.com/instances/6157aa62-3d67-4e61-8936-74dd693f7ab3");
 		File audio_f = null;
 		try{
 			//audio = new File("/Users/carmenolleromerello/Desktop/success.wav");
