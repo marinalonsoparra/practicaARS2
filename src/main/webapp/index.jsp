@@ -11,7 +11,7 @@
 <h1>Aprende Idiomas con Cloud!</h1>
 <hr />
 
-<p id="autoras">Practica Final Andrea Fariña, Marina Alonso y Carmen Ollero</p>
+<p id="autoras">Practica Final: Andrea Fariña, Marina Alonso y Carmen Ollero</p>
 
 <hr />
 
